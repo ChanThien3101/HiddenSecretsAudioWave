@@ -24,7 +24,7 @@ def help():
 optional arguments:
   -h, --help    show this help message and exit
   -f AUDIOFILE  Select Audio File
-  -m SECRETMSG  Enter your message
+  -m SECRETMSG  Enter your message or file txt
   -o OUTPUTFILE Your output file path and name''')
   
 def banner():
@@ -54,6 +54,7 @@ cls()
 banner()
 try:
   em_audio(af, string, output)
-except:
+except Exception as e:
+  print (f"Something went wrong: {e}")
   print ("Something went wrong!! try again")
   quit('')

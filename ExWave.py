@@ -43,6 +43,7 @@ cls()
 banner()
 try:
   ex_msg(af)
-except:
+except Exception as e:
+  print (f"Something went wrong: {e}")
   print ("Something went wrong!! try again")
   quit('')
