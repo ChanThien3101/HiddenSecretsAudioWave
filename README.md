@@ -23,7 +23,7 @@ cd HiddenSecretsAudioWave
 ### Hide Secret Information in Audio file
 
 ```
-python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m "Secret Msg" -o output.wav
+python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m "Secret Msg" -o Output.wav
 python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m TestFile -o Output.wav
 ```
 ### Extract Secret Information from Audio file
@@ -32,6 +32,4 @@ python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m TestFile -o Output.wav
 python ExWave.py -f Output.wav
 ```
 
-### Video Demo
-[![How to control android camera](https://img.youtube.com/vi/UPQD7L9FNrk/0.jpg)](https://www.youtube.com/watch?v=UPQD7L9FNrk)
-#### For More Video subcribe <a href="http://youtube.com/techchipnet">TechChip YouTube Channel</a>
+
