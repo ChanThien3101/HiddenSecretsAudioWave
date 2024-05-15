@@ -11,7 +11,7 @@ Hiddenwave is a python based program for simple audio steganography. You can hid
 
 ```
 https://github.com/ChanThien3101/HiddenSecretsAudioWave.git
-cd HiddenWave
+cd HiddenSecretsAudioWave
 ```
 ## Usage
 <p>Hiddenwave have two python scripts. </p>
