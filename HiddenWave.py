@@ -38,9 +38,10 @@ def banner():
 def get_secret_message(input_str):
     # Check if input_str is a file path
     if os.path.isfile(input_str):
+        filename = "@@FILENAME@@"
         with open(input_str, 'r') as file:
             # Return file name + file content
-            return os.path.basename(input_str) + "\n" + file.read()
+            return os.path.basename(input_str) + filename + file.read()
     else:
         return input_str
 
@@ -51,6 +52,7 @@ def em_audio(af, secret_msg, output):
     
     try:
         print("Please wait...")
+
         waveaudio = wave.open(af, mode='rb')
         frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))
         

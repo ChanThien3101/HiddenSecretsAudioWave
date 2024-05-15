@@ -41,15 +41,14 @@ def ex_msg(af):
         
         # Extract hidden message
         extracted = [frame_bytes[i] & 1 for i in range(len(frame_bytes))]
-        binary_data = "".join(map(str, extracted))
+        # binary_data = "".join(map(str, extracted))
         
         # Convert binary data to characters
         hidden_text = "".join(chr(int("".join(map(str,extracted[i:i+8])),2)) for i in range(0,len(extracted),8))
         
         # Split hidden message into file name and content
-        split_index = hidden_text.find("\n")
-        
-        print("in hidden text: " + hidden_text.split("###")[0])
+        split_index = hidden_text.find("@@FILENAME@@")
+        count_split_index = hidden_text.find("@@FILENAME@@") + len("@@FILENAME@@")
 
         if split_index == -1:
             # If newline character is not found, directly print the hidden message
@@ -58,13 +57,13 @@ def ex_msg(af):
         else:
         
           file_name = os.path.splitext(af)[0] + "_" + hidden_text[:split_index]
-          message_content = hidden_text[split_index + 1:].split("###")[0]
+          message_content = hidden_text[count_split_index :].split("###")[0]
           
           # Write content to file with the same name as original file
           with open(file_name, 'w') as file:
               file.write(message_content)
-          print(f"Extracted file: {file_name}")
-          print(f"Extracted message: {message_content}")
+          print(f"Extracted file: \033[1;91m"+ file_name + "\033[0m")
+          print(f"Extracted message: \033[1;94m"+ message_content + "\033[0m")
           
         
         # Close audio file
