@@ -23,12 +23,13 @@ cd HiddenSecretsAudioWave
 ### Hide Secret Information in Audio file
 
 ```
-python HiddenWave.py -f Demo.wav -m "Secret Msg" -o output.wav
+python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m "Secret Msg" -o output.wav
+python HiddenWave.py -f ThangNamKhongQuenRemix.wav -m TestFile -o Output.wav
 ```
 ### Extract Secret Information from Audio file
 
 ```
-python ExWave.py -f output.wav
+python ExWave.py -f Output.wav
 ```
 
 ### Video Demo
