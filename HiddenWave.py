@@ -60,7 +60,7 @@ def em_audio(af, secret_msg, output):
         secret_msg = get_secret_message(secret_msg)
         
         # Add padding to secret message
-        secret_msg = secret_msg + int((len(frame_bytes) - (len(secret_msg) * 8 * 8)) / 8) * '#'
+        secret_msg = secret_msg + int((len(frame_bytes) - (len(secret_msg) * 8 )) / 8) * '#'
         
         # Convert secret message to binary
         bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in secret_msg])))
